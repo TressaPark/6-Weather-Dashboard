@@ -1,20 +1,4 @@
-/////
-// OVERVIEW
-/////
 
-// UPON A FRESH, LOCALSTORAGE FREE LOAD OF THE PAGE THE ONLY THINGS ORIGINALLY DISPLAYED
-// ARE THE JUMBOTRON AND THE SEARCH BAR OR
-// ## Bonus
-// * Use the [Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API)
-//  to add the user's current location to the initial landing page.
-
-// * You will need to hardcode some of the parameters in the API's URL.
-// User input will determine some of the other parameters.
-// * Use `localStorage` to store any persistent data.
-
-/////
-// VARIABLES
-/////
 
 // This is our API key.
 var APIKey = "&appid=8c9bb7e0eeb10862d148cd62de471c05";
@@ -57,6 +41,10 @@ function citySearch(city) {
 
 	var citySearch = queryURL + city + APIKey;
 	console.log(citySearch);
+	//if there is no input default city to austin
+	if(city.length==0){
+		city="Austin";
+	}
 
 	// ajax for searching for new city to display
 	$.ajax({
@@ -427,6 +415,7 @@ $("#add-city").on("click", function(event) {
 	var city = $("#city-input")
 		.val()
 		.trim();
+		console.log(city);
 
 	//push new city into the Array
 	var containsCity = false;

@@ -40,7 +40,7 @@ function citySearch(city) {
 	$(".uvIndex").empty();
 
 	var citySearch = queryURL + city + APIKey;
-	console.log(citySearch);
+	// console.log(citySearch);
 	//if there is no input default city to austin
 	if(city.length==0){
 		city="Austin";
@@ -56,19 +56,19 @@ function citySearch(city) {
 		//  line one
 		//   * City
 		var cityInfo = response.name;
-		console.log(cityInfo);
+		// console.log(cityInfo);
 		//   * Date
 		var dateInfo = response.dt;
-		console.log(dateInfo);
+		// console.log(dateInfo);
 		var currentDate = moment.unix(dateInfo).format("L");
-		console.log("current date" + currentDate);
+		// console.log("current date" + currentDate);
 		//   * Icon image (visual representation of weather conditions)
 		// Where are we pulling the icons from and how
 		var iconDummy = "https://openweathermap.org/img/wn/";
 		var iconPng = "@2x.png";
 		var iconWeather = response.weather[0].icon;
 		var iconUrl = iconDummy + iconWeather + iconPng;
-		console.log(iconUrl);
+		// console.log(iconUrl);
 		var iconImg = $("<img>");
 		iconImg.attr("src", iconUrl);
 		$(".city").append(cityInfo + " ");
@@ -78,11 +78,11 @@ function citySearch(city) {
 		// line two
 		//   * Temperature
 		// Hint: To convert from Kelvin to Fahrenheit: F = (K - 273.15) * 1.80 + 32
-		console.log(response.main.temp);
+		// console.log(response.main.temp);
 		var K = response.main.temp;
-		console.log(K);
+		// console.log(K);
 		var F = ((K - 273.15) * 1.8 + 32).toFixed(0);
-		console.log(F);
+		// console.log(F);
 		$(".temp").append("Temperature: " + F + " °F");
 
 		// line three
@@ -93,9 +93,9 @@ function citySearch(city) {
 		// line four
 		//   * Wind speed
 		// To convert from meters per second to Miles Per Hour
-		console.log(response.wind.speed);
+		// console.log(response.wind.speed);
 		var oldSpeed = response.wind.speed;
-		console.log(oldSpeed);
+		// console.log(oldSpeed);
 		var newSpeed = (oldSpeed * 2.2369).toFixed(2);
 		$(".wind").append("Wind Speed: " + newSpeed + " MPH");
 
@@ -125,7 +125,7 @@ function uvIndex(lon, lat) {
 	// 	"https://api.openweathermap.org/data/2.5/uvi?appid=2cbb6e75732b52b978749f645bfef667";
 	var middle = "&lon=";
 	var indexSearch = indexURL + lat + middle + lon;
-	console.log(indexSearch);
+	// console.log(indexSearch);
 
 	$.ajax({
 		url: indexSearch,
@@ -210,7 +210,7 @@ function renderButtons() {
 function fiveDay(city) {
 	var fiveFront = "https://api.openweathermap.org/data/2.5/forecast?q=";
 	var fiveURL = fiveFront + city + APIKey;
-	console.log(fiveURL);
+	// console.log(fiveURL);
 
 	//clear out previous data
 	$(".card-text").empty();
@@ -253,7 +253,7 @@ function fiveDay(city) {
 			"https://openweathermap.org/img/wn/" +
 			response.list[4].weather[0].icon +
 			"@2x.png";
-		console.log("card Icon line 280" + iconOneSrc);
+		// console.log("card Icon line 280" + iconOneSrc);
 		iconOne.attr("src", iconOneSrc);
 		$(".iconOne").append(iconOne);
 

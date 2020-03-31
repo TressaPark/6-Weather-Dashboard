@@ -1,8 +1,6 @@
 # 6 Weather Dashboard
  
-## WeatherDashboard
-
-PseudoCode
+## PseudoCode
 User enters city name and clicks the submit button.
 City gets entered into an array to keep the sessions search history and create the appropriate buttons.
 City gets passed through functions that run it through OpenWeatherAPI calls

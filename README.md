@@ -1,6 +1,6 @@
-# TressaHomeworkWeek6
+# 6 Weather Dashboard
  
-WeatherDashboard
+## WeatherDashboard
 
 PseudoCode
 User enters city name and clicks the submit button.
@@ -8,20 +8,20 @@ City gets entered into an array to keep the sessions search history and create t
 City gets passed through functions that run it through OpenWeatherAPI calls
 Information returns, formatted to the proper positions and format on the position to the right.
 
-Usage
+## Usage
 Enter the name of the city you wish to look for and and click on the button.
 
 Your search will be saved as a button and the weather information will appear to the right.
 
 Weather Dashboard Image
 
-Description
+## Description
 
 From the assignment README.md file
 Unit 06 Server-Side APIs Homework: Weather Dashboard
 Developers are often tasked with retrieving data from another application's API and using it in the context of their own. Third-party APIs allow developers to access their data and functionality by making requests with specific parameters to a URL. In this homework assignment, your challenge is to build a weather dashboard using the OpenWeather API.
 
-Instructions
+## Instructions
 Build a weather dashboard application with search functionality to find current weather conditions and the future weather outlook for multiple cities. Following the common templates for user stories, we can frame this challenge as follows:
 
 Use AJAX to hook into the API to retrieve data in JSON format.
@@ -58,7 +58,7 @@ Humidity
 
 weather dashboard
 
-Hints
+## Hints
 Create multiple functions within your application to handle the different parts of the dashboard:
 
 Current conditions
